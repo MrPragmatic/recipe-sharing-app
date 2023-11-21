@@ -1,10 +1,6 @@
 # .rubocop.yml
-
 require:
   - rubocop-rails
   - rubocop-capybara
 
-AllCops:
-  NewCops: enable
-  Exclude:
-    - lib/generators/**/*.rb
+EnabledByDefault: true
