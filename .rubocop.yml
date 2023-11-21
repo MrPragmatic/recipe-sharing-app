@@ -2,5 +2,3 @@
 require:
   - rubocop-rails
   - rubocop-capybara
-
-EnabledByDefault: true
