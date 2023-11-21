@@ -1,0 +1,29 @@
+<div id="<%= dom_id recipe %>">
+  <p>
+    <strong>Title:</strong>
+    <%= recipe.title %>
+  </p>
+
+  <p>
+    <strong>Body:</strong>
+    <%= recipe.body %>
+  </p>
+
+  <p>
+    <strong>Video url:</strong>
+    <%= recipe.video_url %>
+  </p>
+
+  <p>
+    <strong>Featured image:</strong>
+    <%= recipe.featured_image %>
+  </p>
+
+  <h2><strong>Ingredients:</strong></h2>
+  <ul>
+    <% recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient.content %></li>
+    <% end %>
+  </ul>
+
+</div>

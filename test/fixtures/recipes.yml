@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: Test body text for my awesome recipe for my recipe site
+  video_url: https://youtu.be/5Tz66MJvuck
+  featured_image: https://images.pexels.com/photos/3876635/pexels-photo-3876635.jpeg
+
+two:
+  title: MyString
+  body: Test body text for my awesome recipe for my recipe site with potato recipe
+  video_url: https://youtu.be/hCLkVrp_4CE
+  featured_image: https://images.pexels.com/photos/1208781/pexels-photo-1208781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2

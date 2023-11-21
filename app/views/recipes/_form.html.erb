@@ -1,0 +1,48 @@
+<%= javascript_include_tag 'application' %>
+<%= form_with(model: recipe) do |form| %>
+  <% if recipe.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+        <% recipe.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.label :video_url, style: "display: block" %>
+    <%= form.text_field :video_url %>
+  </div>
+
+  <div>
+    <%= form.label :featured_image, style: "display: block" %>
+    <%= form.text_field :featured_image %>
+  </div>
+
+ <div>
+   <%= form.label :ingredients, style: "display: block" %>
+   <%= cocooned_container do %>
+   <%= form.fields_for :ingredients do |ingredient_form| %>
+       <%= render 'ingredient_fields', f: ingredient_form %>
+     <% end %>
+     <p><%= cocooned_add_item_link 'Add an ingredient', form, :ingredients, class: 'bg-transparent hover:bg-blue-500 text-blue-700 font-semi-bold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' %></p>
+   <% end %>
+ </div>
+
+  <div>
+    <%= form.submit class: 'bg-transparent hover:bg-blue-500 text-blue-700 font-semi-bold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' %>
+  </div>
+<% end %>
