@@ -1,5 +1,4 @@
 # .rubocop.yml
-EnabledByDefault: true
 
 require:
   - rubocop-rails
