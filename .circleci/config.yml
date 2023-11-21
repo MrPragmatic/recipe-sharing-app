@@ -13,6 +13,25 @@ on:
     branches: [ "main" ]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: 3.2.2
+
+      - name: Set up database schema
+        run: bin/rails db:schema:load
+
+      - name: Build application
+        run: bundle exec rake assets:precompile
+
   test:
     runs-on: ubuntu-latest
 
@@ -40,8 +59,8 @@ jobs:
           bundler-cache: true
           ruby-version: 3.2.2
 
-      - name: Set up database schema
-        run: bin/rails db:schema:load
+      - name: Build application
+        run: bundle exec rake assets:precompile
 
       - name: Run tests
         run: bin/rake
