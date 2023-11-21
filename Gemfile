@@ -27,6 +27,12 @@ gem 'cocooned', '~> 2.0', '>= 2.0.3'
 # Security audit gem
 gem 'bundler-audit', '~> 0.9.1'
 
+# Security vulnerability checker gem
+gem 'brakeman', '~> 6.0', '>= 6.0.1'
+
+# Rubocop code style checking gem
+gem 'rubocop', '~> 1.57', '>= 1.57.2'
+
 # Use dotenv-rails to handle database access credentials
 gem "dotenv-rails"
 
