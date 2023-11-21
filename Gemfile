@@ -24,6 +24,9 @@ gem 'execjs', '~> 2.9', '>= 2.9.1'
 # Cocooned gem for nested form
 gem 'cocooned', '~> 2.0', '>= 2.0.3'
 
+# Security audit gem
+gem 'bundler-audit', '~> 0.9.1'
+
 # Use dotenv-rails to handle database access credentials
 gem "dotenv-rails"
 
