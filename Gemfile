@@ -41,6 +41,9 @@ gem 'rubocop-rails', '~> 2.22', '>= 2.22.2'
 # Rubocop check for minitest (rails default)
 gem 'rubocop-capybara', '~> 2.19'
 
+# Custom rubocop cops used by Discourse
+gem 'rubocop-discourse', '~> 3.4', '>= 3.4.1'
+
 # Use dotenv-rails to handle database access credentials
 gem 'dotenv-rails'
 
