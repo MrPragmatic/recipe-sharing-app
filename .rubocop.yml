@@ -1,0 +1,9 @@
+# .rubocop.yml
+
+require:
+  - rubocop-rails
+  - rubocop-capybara
+
+AllCops:
+  Exclude:
+    - lib/generators/**/*.rb
