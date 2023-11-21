@@ -4,16 +4,31 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.8"
+gem "rails", "~> 7.1.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# Use PostgresSQL v. 16 as the database for Active Record
+gem 'pg', '~> 1.5', '>= 1.5.4'
+
+# Coffee rails adaptor
+gem 'coffee-rails', '~> 5.0'
+
+# Jquery to rails
+gem 'jquery-rails', '~> 4.6'
+
+# Javascript run-time
+gem 'execjs', '~> 2.9', '>= 2.9.1'
+
+# Cocooned gem for nested form
+gem 'cocooned', '~> 2.0', '>= 2.0.3'
+
+# Use dotenv-rails to handle database access credentials
+gem "dotenv-rails"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem "puma", "~> 6.4"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -70,3 +85,5 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem "tailwindcss-rails", "~> 2.0"
