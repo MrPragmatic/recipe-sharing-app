@@ -6,5 +6,6 @@ require:
 
 AllCops:
   Enabled: true
+  NewCops: enable
   Exclude:
     - lib/generators/**/*.rb
