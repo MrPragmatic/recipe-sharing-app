@@ -1,0 +1,6 @@
+<% # 'app/views/recipes/_ingredient_fields.html.erb' %>
+<%= cocooned_item do %>
+  <%= f.label :ingredient, style: "display: block" %>
+  <%= f.text_field :content %>
+  <%= cocooned_remove_item_link 'Remove ingredient', f %>
+<% end %>
