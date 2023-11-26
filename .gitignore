@@ -5,15 +5,15 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+.bundle
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*
 
 # Ignore Circle CI files
-/ .circleci
-/ .circleci/*
+.circleci
+.circleci/*
 
 # Ignore Gemfile.lock
 /config/database.yml
@@ -42,7 +42,7 @@
 /config/master.key
 
 # Ignore environment file
-/ .env
+.env
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
