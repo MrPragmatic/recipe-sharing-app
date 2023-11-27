@@ -40,7 +40,9 @@ class RecipesController < ApplicationController
   end
 
   # PATCH/PUT /recipes/1 or /recipes/1.json
+  # rubocop:disable Metrics/AbcSize
   def update
+    # rubocop:enable Metrics/AbcSize
     @recipe = Recipe.friendly.find(params[:id])
     respond_to do |format|
       if @recipe.update(recipe_params)

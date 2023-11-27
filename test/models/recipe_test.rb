@@ -81,7 +81,8 @@ class RecipeTest < ActiveSupport::TestCase
       body: @recipe.body,
       featured_image: @recipe.featured_image,
       video_url: @recipe.video_url,
-      title: @recipe.title)
+      title: @recipe.title
+    )
     assert_not recipe.save, 'Recipe saved without any ingredient'
   end
 end
