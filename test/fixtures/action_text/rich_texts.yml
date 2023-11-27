@@ -1,0 +1,9 @@
+one_content:
+  record: one (Recipe)
+  name: body
+  body: <p>Test body text for my awesome recipe for my recipe site for potatoes</p>
+
+two_content:
+  record: two (Recipe)
+  name: body
+  body: <p>Test body text for my awesome recipe for my recipe site for potatoes</p>

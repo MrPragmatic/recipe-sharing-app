@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1 or /recipes/1.json
   def show
-    @article = Recipe.find(params[:id])
+    @recipe = Recipe.friendly.find(params[:id])
   end
 
   # GET /recipes/new
@@ -20,7 +20,9 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1/edit
-  def edit; end
+  def edit
+    @recipe = Recipe.friendly.find(params[:id])
+  end
 
   # POST /recipes or /recipes.json
   def create
@@ -39,6 +41,7 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
+    @recipe = Recipe.friendly.find(params[:id])
     respond_to do |format|
       if @recipe.update(recipe_params)
         format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.' }
@@ -52,6 +55,7 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
+    @recipe = Recipe.friendly.find(params[:id])
     @recipe.destroy!
 
     respond_to do |format|
@@ -64,12 +68,12 @@ class RecipesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.friendly.find_by(slug: params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:title, :body, :video_url, :featured_image,
+    params.require(:recipe).permit(:title, :body, :video_url, :featured_image, :slug,
                                    ingredients_attributes: %i[id content destroy])
   end
 end

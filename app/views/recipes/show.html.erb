@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @recipe %>
-
-<div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
-  <%= link_to "Back to recipes", recipes_path %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+<div class="mx-auto max-w-3xl my-2 grid grid-cols-2 gap-2">
+  <div class="inline-grid">
+    <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %>
+    <%= button_to "Delete this recipe", @recipe, method: :delete %>
+  </div>
+  <div class="text-end">
+    <%= link_to "Back to recipes", recipes_path %>
+  </div>
 </div>
+<%= render @recipe %>

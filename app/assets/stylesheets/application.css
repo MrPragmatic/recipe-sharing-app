@@ -1,4 +1,4 @@
-/*
+ /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -12,4 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require social-share-button
+ *= require trix
  */
+ .social-share-button .ssb-icon {
+     background-size: 24px 24px !important;
+     height: 24px !important;
+     width: 24px !important;
+ }

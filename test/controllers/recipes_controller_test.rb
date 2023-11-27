@@ -58,7 +58,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
       ]
     } }
 
-    assert_redirected_to recipe_url(@recipe)
+    assert_redirected_to recipe_url(@recipe.title.parameterize)
   end
 
   test 'should destroy recipe' do

@@ -2,3 +2,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require 'cocooned'
+//= require social-share-button
+//= require trix

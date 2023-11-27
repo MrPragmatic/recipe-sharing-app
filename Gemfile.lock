@@ -97,7 +97,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    cocooned (2.0.3)
+    cocooned (2.0.4)
       rails (>= 6.0, <= 7.2)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -121,10 +121,16 @@ GEM
       ruby2_keywords
     erubi (1.12.0)
     execjs (2.9.1)
+    ffi (1.16.3)
+    friendly_id (5.5.1)
+      activerecord (>= 4.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (1.2.3)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -152,11 +158,12 @@ GEM
       net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
+    mini_magick (4.12.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
-    net-imap (0.4.5)
+    net-imap (0.4.6)
       date
       net-protocol
     net-pop (0.1.2)
@@ -166,11 +173,7 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.6.1)
-    nokogiri (1.15.5-aarch64-linux)
-      racc (~> 1.4)
     nokogiri (1.15.5-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
     parser (3.2.2.4)
@@ -258,12 +261,16 @@ GEM
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
+    ruby-vips (2.2.0)
+      ffi (~> 1.12)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.15.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    social-share-button (1.2.4)
+      coffee-rails
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -274,14 +281,14 @@ GEM
     stimulus-rails (1.3.0)
       railties (>= 6.0.0)
     stringio (3.0.9)
-    tailwindcss-rails (2.0.32-aarch64-linux)
-      railties (>= 6.0.0)
     tailwindcss-rails (2.0.32-arm64-darwin)
-      railties (>= 6.0.0)
-    tailwindcss-rails (2.0.32-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.3.0)
     timeout (0.4.1)
+    trix (0.10.1)
+      rails
+    trix-rails (2.4.0)
+      rails (> 4.1)
     turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -301,23 +308,25 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    youtube_addy (1.0.4)
     zeitwerk (2.6.12)
 
 PLATFORMS
-  aarch64-linux
   arm64-darwin-22
-  x86_64-linux
 
 DEPENDENCIES
+  actiontext (~> 7.1, >= 7.1.2)
   bootsnap
   brakeman (~> 6.0, >= 6.0.1)
   bundler-audit (~> 0.9.1)
   capybara
-  cocooned (~> 2.0, >= 2.0.3)
+  cocooned (~> 2.0, >= 2.0.4)
   coffee-rails (~> 5.0)
   debug
   dotenv-rails
   execjs (~> 2.9, >= 2.9.1)
+  friendly_id (~> 5.5, >= 5.5.1)
+  image_processing (~> 1.12, >= 1.12.2)
   importmap-rails
   jbuilder
   jquery-rails (~> 4.6)
@@ -329,12 +338,16 @@ DEPENDENCIES
   rubocop-discourse (~> 3.4, >= 3.4.1)
   rubocop-rails (~> 2.22, >= 2.22.2)
   selenium-webdriver
+  social-share-button (~> 1.2, >= 1.2.4)
   sprockets-rails
   stimulus-rails
   tailwindcss-rails (~> 2.0)
+  trix
+  trix-rails (~> 2.4)
   turbo-rails
   tzinfo-data
   web-console
+  youtube_addy (~> 1.0, >= 1.0.4)
 
 RUBY VERSION
    ruby 3.2.2p53

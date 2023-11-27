@@ -1,29 +1,42 @@
-<div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Title:</strong>
-    <%= recipe.title %>
-  </p>
+<%= javascript_include_tag 'recipe' %>
+<div id="<%= dom_id recipe %>" class="mx-auto mb-8 max-w-3xl px-0">
 
-  <p>
-    <strong>Body:</strong>
-    <%= recipe.body %>
-  </p>
+  <div id="featured-image-container">
+    <img src="<%= recipe.featured_image %>" alt="Recipe image"/>
+  </div>
 
-  <p>
-    <strong>Video url:</strong>
-    <%= recipe.video_url %>
-  </p>
+  <div id="recipe-container" class="bg-gray-100 px-8 pb-20">
+    <div class="pt-4">
+      <h1><%= recipe.title %></h1>
+    </div>
 
-  <p>
-    <strong>Featured image:</strong>
-    <%= recipe.featured_image %>
-  </p>
+    <div id="social-share-buttons" class="pb-4">
+      <h3>Share this recipe:</h3>
+      <span><%= social_share_button_tag(@recipe.title) %></span>
+    </div>
 
-  <h2><strong>Ingredients:</strong></h2>
-  <ul>
-    <% recipe.ingredients.each do |ingredient| %>
-      <li><%= ingredient.content %></li>
-    <% end %>
-  </ul>
+    <div class="">
+      <h2>Ingredients</h2>
+      <ul class="px-4">
+        <% recipe.ingredients.each do |ingredient| %>
+          <li style="list-style: disc"><%= ingredient.content %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="pt-4">
+      <h2>Steps to cook</h2>
+      <%= recipe.body %>
+    </div>
+
+    <div id="video-container" class="relative w-full h-96">
+      <h3 class="mb-10">Cooking video</h3>
+      <iframe id="recipe-video" class="mt-12 absolute top-0 left-0 w-full h-full" title="recipe video"
+              src="https://www.youtube.com/embed/<%= YouTubeAddy.extract_video_id(recipe.video_url) %>" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="origin" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
 
 </div>

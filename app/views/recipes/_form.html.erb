@@ -1,4 +1,4 @@
-<%= javascript_include_tag 'application' %>
+<%= javascript_include_tag 'application', crossorigin: 'anonymous' %>
 <%= form_with(model: recipe) do |form| %>
   <% if recipe.errors.any? %>
     <div style="color: red">
@@ -13,23 +13,23 @@
   <% end %>
 
   <div>
+    <%= form.label :featured_image_url, style: "display: block" %>
+    <%= form.text_field :featured_image, class: "w-full" %>
+  </div>
+
+  <div>
     <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "w-full" %>
   </div>
 
   <div>
     <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
+    <%= form.trix_editor :body, required: true, autofocus: true %>
   </div>
 
   <div>
     <%= form.label :video_url, style: "display: block" %>
-    <%= form.text_field :video_url %>
-  </div>
-
-  <div>
-    <%= form.label :featured_image, style: "display: block" %>
-    <%= form.text_field :featured_image %>
+    <%= form.text_field :video_url, class: "w-full", required: false %>
   </div>
 
  <div>

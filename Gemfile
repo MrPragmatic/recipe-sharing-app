@@ -24,7 +24,28 @@ gem 'jquery-rails', '~> 4.6'
 gem 'execjs', '~> 2.9', '>= 2.9.1'
 
 # Cocooned gem for nested form
-gem 'cocooned', '~> 2.0', '>= 2.0.3'
+gem 'cocooned', '~> 2.0', '>= 2.0.4'
+
+# Friendly urls
+gem 'friendly_id', '~> 5.5', '>= 5.5.1'
+
+# Image processing gem
+gem 'image_processing', '~> 1.12', '>= 1.12.2'
+
+# Action text gem to store rich text
+gem 'actiontext', '~> 7.1', '>= 7.1.2'
+
+# Trix for rich text editing
+gem 'trix'
+
+# Trix rich text editor for creating recipes conveniently
+gem 'trix-rails', '~> 2.4'
+
+# YouTube ID extractor for the views
+gem 'youtube_addy', '~> 1.0', '>= 1.0.4'
+
+# Social share buttons
+gem 'social-share-button', '~> 1.2', '>= 1.2.4'
 
 # Security audit gem
 gem 'bundler-audit', '~> 0.9.1'
@@ -79,9 +100,6 @@ gem 'bootsnap', require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
-
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

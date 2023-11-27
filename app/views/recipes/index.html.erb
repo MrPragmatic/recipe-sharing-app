@@ -2,13 +2,13 @@
 <div class="grid grid-cols-1">
     <h1 class="font-bold text-2xl text-black-500 pb-3" >Recipes</h1>
 </div>
-<div class="grid grid-cols-1 gap-4" id="recipes">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
+    <div class="grid grid-cols-1">
+        <a href="<%= recipe_path(recipe) %>">
+        <img src="<%= recipe.featured_image%>" alt="recipe featured image"/>
+        <h2 class="text-[18px]"><%= recipe.title %></h2>
+        </a>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New recipe", new_recipe_path %>

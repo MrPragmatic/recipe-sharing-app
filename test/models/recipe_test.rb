@@ -7,13 +7,13 @@ class RecipeTest < ActiveSupport::TestCase
     @recipe = recipes(:one)
     @ingredient_one = ingredients(:one)
     @ingredient_two = ingredients(:two)
+    @body = action_text_rich_texts(:one_content)
   end
 
   test 'Should not save without a recipe title' do
     recipe = Recipe.new(
       body: @recipe.body,
       featured_image: @recipe.featured_image,
-      title: nil,
       video_url: @recipe.video_url,
       ingredients_attributes: [
         { content: @ingredient_one.content },
@@ -41,7 +41,6 @@ class RecipeTest < ActiveSupport::TestCase
       body: @recipe.body,
       featured_image: @recipe.featured_image,
       title: @recipe.title,
-      video_url: nil,
       ingredients_attributes: [
         { content: @ingredient_one.content },
         { content: @ingredient_two.content }
@@ -55,7 +54,7 @@ class RecipeTest < ActiveSupport::TestCase
       body: @recipe.body,
       featured_image: @recipe.featured_image,
       title: @recipe.title,
-      video_url: 'https://youtu.be/valid-video-url',
+      video_url: @recipe.video_url,
       ingredients_attributes: [
         { content: @ingredient_one.content },
         { content: @ingredient_two.content }
@@ -69,7 +68,6 @@ class RecipeTest < ActiveSupport::TestCase
       body: @recipe.body,
       video_url: @recipe.video_url,
       title: @recipe.title,
-      featured_image: nil,
       ingredients_attributes: [
         { content: @ingredient_one.content },
         { content: @ingredient_two.content }
@@ -79,8 +77,11 @@ class RecipeTest < ActiveSupport::TestCase
   end
 
   test 'Should not save without any ingredient' do
-    recipe = Recipe.new(body: @recipe.body, featured_image: @recipe.featured_image, video_url: @recipe.video_url,
-                        title: @recipe.title)
+    recipe = Recipe.new(
+      body: @recipe.body,
+      featured_image: @recipe.featured_image,
+      video_url: @recipe.video_url,
+      title: @recipe.title)
     assert_not recipe.save, 'Recipe saved without any ingredient'
   end
 end
