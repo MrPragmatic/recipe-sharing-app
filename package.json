@@ -7,12 +7,12 @@
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@notus.sh/cocooned": "^2.0.3",
+    "@notus.sh/cocooned": "^2.0.4",
     "@rails/actiontext": "^7.1.2",
     "controllers": "^0.0.2",
     "esbuild-plugin-postcss": "^0.2.1",
-    "trix": "^2.0.8",
-    "webpack": "^5.89.0"
+    "flowbite": "^2.2.0",
+    "trix": "^2.0.8"
   },
   "scripts": {
     "build:css": "node esbuild.config.js",

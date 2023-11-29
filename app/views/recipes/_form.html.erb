@@ -1,4 +1,4 @@
-<%= javascript_include_tag 'application', crossorigin: 'anonymous' %>
+<%= javascript_include_tag 'application', crossorigin: 'anonymous', "data-turbo-track": "reload", defer: true %>
 <%= form_with(model: recipe) do |form| %>
   <% if recipe.errors.any? %>
     <div style="color: red">

@@ -31,6 +31,7 @@
 
     <div id="video-container" class="relative w-full h-96">
       <h3 class="mb-10">Cooking video</h3>
+      <% # Working iframe structure by Kofi Osei, https://tailwindflex.com/kofi-osei/google-map-iframe-with-tailwind %>
       <iframe id="recipe-video" class="mt-12 absolute top-0 left-0 w-full h-full" title="recipe video"
               src="https://www.youtube.com/embed/<%= YouTubeAddy.extract_video_id(recipe.video_url) %>" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

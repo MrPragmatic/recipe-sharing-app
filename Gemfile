@@ -47,6 +47,9 @@ gem 'youtube_addy', '~> 1.0', '>= 1.0.4'
 # Social share buttons
 gem 'social-share-button', '~> 1.2', '>= 1.2.4'
 
+# Devise gem for user authentication
+gem 'devise', '~> 4.9', '>= 4.9.3'
+
 # Security audit gem
 gem 'bundler-audit', '~> 0.9.1'
 
@@ -123,4 +126,4 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'tailwindcss-rails', '~> 2.0'
+gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.32'

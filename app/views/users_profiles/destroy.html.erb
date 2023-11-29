@@ -1,0 +1,8 @@
+<!-- app/views/users_profiles/destroy.html.erb -->
+<h1>Delete User Profile</h1>
+
+<p>Are you sure you want to delete your user profile and associated user?</p>
+
+<%= link_to 'Cancel', root_path %>
+<%= link_to 'Delete', @user_profile, method: :delete, data: { confirm: 'Are you sure?' } %>
+

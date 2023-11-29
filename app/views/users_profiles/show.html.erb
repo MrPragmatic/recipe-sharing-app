@@ -1,0 +1,11 @@
+<div>
+  <h1>User Profile</h1>
+
+  <p>Name: <%= @user.name %></p>
+  <p>Bio: <%= @user.bio %></p>
+  <p>Email: <%= @user.email %></p>
+
+  <%= link_to "Edit your information", edit_user_registration_path %>
+  <%= link_to 'Delete your profile', users_profile_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Back to Home', root_path %>
+</div>
