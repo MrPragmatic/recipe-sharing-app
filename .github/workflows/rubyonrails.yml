@@ -16,17 +16,9 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
 
-    env:
-      RAILS_ENV: production
-      POSTGRES_DB: ENV['POSTGRES']
-      POSTGRES_USER: ENV['POSTGRES_USER']
-      POSTGRES_PASSWORD: ENV['POSTGRES_PASSWORD']
-      DATABASE_URL: ENV['DATABASE_URL']
-
     steps:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: ${{ secrets.SERVICE_ID }}
           api-key: ${{ secrets.RENDER_API_KEY }}
-          wait-for-success: true
