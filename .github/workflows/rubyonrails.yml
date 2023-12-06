@@ -19,12 +19,12 @@ jobs:
         ports:
           - "5432:5432"
         env:
-          POSTGRES_DB: rails_test
-          POSTGRES_USER: rails
-          POSTGRES_PASSWORD: password
+          POSTGRES_DB: ENV['POSTGRES']
+          POSTGRES_USER: ENV['POSTGRES_USER']
+          POSTGRES_PASSWORD: ENV['POSTGRES_PASSWORD']
     env:
-      RAILS_ENV: test
-      DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      RAILS_ENV: production
+      DATABASE_URL: ENV['DATABASE_URL']
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
