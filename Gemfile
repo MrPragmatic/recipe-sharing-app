@@ -44,7 +44,7 @@ gem 'trix-rails', '~> 2.4'
 # YouTube ID extractor for the views
 gem 'youtube_addy', '~> 1.0', '>= 1.0.4'
 
-# Social share buttons
+# Social share buttons to share recipes
 gem 'social-share-button', '~> 1.2', '>= 1.2.4'
 
 # Devise gem for user authentication
