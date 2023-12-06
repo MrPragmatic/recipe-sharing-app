@@ -1,12 +1,12 @@
 databases:
   - name: postgres
     ipAllowList: []
-    databaseName: <%= ENV['POSTGRES_DB'] %>
-    user: <%= ENV['POSTGRES_USER'] %>
+    databaseName: ENV['POSTGRES_DB']
+    user: POSTGRES_USER
 
 services:
   - type: web
-    name: <%= ENV['SERVICES_KEY'] %>
+    name: SERVICES_KEY
     env: ruby
     buildCommand: "./render-build.sh"
     startCommand: "bundle exec rails s"
