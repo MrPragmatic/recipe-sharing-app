@@ -8,6 +8,7 @@ class Recipe < ApplicationRecord
   friendly_id :title, use: :slugged
 
   has_rich_text :body
+  belongs_to :user
 
   has_many :ingredients, dependent: :destroy
   accepts_nested_attributes_for :ingredients, allow_destroy: true
@@ -35,5 +36,11 @@ class Recipe < ApplicationRecord
 
   def at_least_one_ingredient
     errors.add(:base, 'At least one ingredient is required') if ingredients.empty?
+  end
+
+  def belongs_to_user?(user)
+    return true if user.is_admin? || (self.user == user)
+
+    false
   end
 end

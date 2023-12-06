@@ -1,2 +1,2 @@
-import '@notus.sh/cocooned';
-Cocooned.start();
+import Cocooned from '@notus.sh/cocooned/src/cocooned/cocooned.js'
+Cocooned.start()

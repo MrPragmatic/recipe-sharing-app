@@ -4,6 +4,7 @@ require 'test_helper'
 
 class RecipeTest < ActiveSupport::TestCase
   setup do
+    @user = users(:one)
     @recipe = recipes(:one)
     @ingredient_one = ingredients(:one)
     @ingredient_two = ingredients(:two)
@@ -38,6 +39,7 @@ class RecipeTest < ActiveSupport::TestCase
 
   test 'Should save without any video url' do
     recipe = Recipe.new(
+      user: @user,
       body: @recipe.body,
       featured_image: @recipe.featured_image,
       title: @recipe.title,
@@ -51,6 +53,7 @@ class RecipeTest < ActiveSupport::TestCase
 
   test 'Should save video with valid video url' do
     recipe = Recipe.new(
+      user: @user,
       body: @recipe.body,
       featured_image: @recipe.featured_image,
       title: @recipe.title,

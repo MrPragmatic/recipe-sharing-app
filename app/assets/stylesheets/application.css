@@ -13,8 +13,10 @@
  *= require_tree .
  *= require_self
  *= require social-share-button
- *= require trix
  */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
  .social-share-button .ssb-icon {
      background-size: 24px 24px !important;
      height: 24px !important;

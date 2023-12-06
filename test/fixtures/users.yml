@@ -5,12 +5,14 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
+  id: 1
   name: Test User
   bio: example bio text
   email: test@testdomain.ie
   encrypted_password: $2a$10$eVb3gFdEEcWwfo1Z2nIGqenFvrygOu/2rEuUttWNsOW5XdnaNJuJ.
 #
 two:
+  id: 2
   name: Test User 2
   bio: another example bio text
   email: test2@testdomain.ie

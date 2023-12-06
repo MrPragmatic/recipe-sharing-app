@@ -4,6 +4,7 @@ require 'test_helper'
 
 class RecipesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in users(:one)
     @recipe = recipes(:one)
     @ingredient_one = ingredients(:one)
     @ingredient_two = ingredients(:two)
@@ -22,6 +23,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
   test 'should create recipe' do
     assert_difference('Recipe.count') do
       post recipes_url, params: { recipe: {
+        user: @user,
         body: @recipe.body,
         featured_image: @recipe.featured_image,
         title: @recipe.title,
@@ -66,6 +68,6 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
       delete recipe_url(@recipe)
     end
 
-    assert_redirected_to recipes_url
+    assert_redirected_to root_path
   end
 end

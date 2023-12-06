@@ -1,20 +1,15 @@
-const postcssPlugin = require('esbuild-plugin-postcss');
+const esbuild = require('esbuild');
+const postcss = require('postcss');
 const tailwindcss = require('tailwindcss');
 
-const buildStyles = async () => {
-    const result = await postcssPlugin({
-        plugins: [
-            tailwindcss('./tailwind.config.js'),
-            // Add other postcss plugins if needed
-        ],
-    }).process('@import "app/assets/stylesheets/application.css"', {
-        from: undefined,
-    });
+const buildStyles = async (input) => {
+    const result = await postcss([tailwindcss('./tailwind.config.js')])
+        .process(input, { from: undefined });
 
     return result.css;
 };
 
-require('esbuild').build({
+esbuild.build({
     entryPoints: ['app/javascript/application.js'],
     bundle: true,
     outfile: 'public/packs/application.js',
@@ -25,7 +20,7 @@ require('esbuild').build({
             name: 'postcss',
             setup: async (build) => {
                 build.onLoad({ filter: /\.css$/ }, async (args) => {
-                    const contents = await buildStyles();
+                    const contents = await buildStyles(args.path);
                     return { contents, loader: 'css' };
                 });
             },

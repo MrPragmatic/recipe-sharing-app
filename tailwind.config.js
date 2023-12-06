@@ -1,16 +1,18 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './public/*.html',
     './app/helpers/**/*.rb',
+    './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js',
-    './app/views/**/*',
+    './app/views/**/*/.html.erb',
+    './node_modules/flowbite/**/*.js'
   ],
   theme: {
     extend: {},
   },
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {}
-  }
+  plugins: [
+    'tailwindcss: {}',
+    'autoprefixer: {}',
+    require('flowbite/plugin'),
+  ]
 }
