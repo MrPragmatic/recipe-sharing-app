@@ -19,9 +19,9 @@ jobs:
         ports:
           - "5432:5432"
         env:
-          POSTGRES_DB: ENV['POSTGRES']
-          POSTGRES_USER: ENV['POSTGRES_USER']
-          POSTGRES_PASSWORD: ENV['POSTGRES_PASSWORD']
+          POSTGRES_DB: rails_test
+          POSTGRES_USER: rails
+          POSTGRES_PASSWORD: password
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
@@ -64,6 +64,9 @@ jobs:
 
     env:
       RAILS_ENV: production
+      POSTGRES_DB: ENV['POSTGRES']
+      POSTGRES_USER: ENV['POSTGRES_USER']
+      POSTGRES_PASSWORD: ENV['POSTGRES_PASSWORD']
       DATABASE_URL: ENV['DATABASE_URL']
 
     steps:
