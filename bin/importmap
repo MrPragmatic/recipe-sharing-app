@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
 
+# Require the application configuration file
 require_relative "../config/application"
+
+# Require the commands provided by the 'importmap' gem
 require "importmap/commands"

@@ -1,0 +1,5 @@
+Copyright notice for rails gem:
+
+Author: David Wright
+
+Contributors: Rafael da Silva Almeida (@stupied4ever)

@@ -10,7 +10,9 @@
  * We need to override trix.css’s image gallery styles to accommodate the
  * <action-text-attachment> element we wrap around attachments. Otherwise,
  * images in galleries will be squished by the max-width: 33%; rule.
-*/
+ * Set flex properties, padding, and max-width for <action-text-attachment> and <.attachment>
+ * within the attachment gallery to adjust image gallery styles in trix.css
+ */
 .trix-content .attachment-gallery > action-text-attachment,
 .trix-content .attachment-gallery > .attachment {
   flex: 1 0 33%;
@@ -18,13 +20,21 @@
   max-width: 33%;
 }
 
+/*
+ * For attachment galleries with specific classes (e.g., attachment-gallery--2 or attachment-gallery--4),
+ * set flex-basis and max-width accordingly to adjust styles
+ */
 .trix-content .attachment-gallery.attachment-gallery--2 > action-text-attachment,
-.trix-content .attachment-gallery.attachment-gallery--2 > .attachment, .trix-content .attachment-gallery.attachment-gallery--4 > action-text-attachment,
+.trix-content .attachment-gallery.attachment-gallery--2 > .attachment,
+.trix-content .attachment-gallery.attachment-gallery--4 > action-text-attachment,
 .trix-content .attachment-gallery.attachment-gallery--4 > .attachment {
   flex-basis: 50%;
   max-width: 50%;
 }
 
+/*
+ * Adjust padding and max-width for <action-text-attachment> within the trix content
+ */
 .trix-content action-text-attachment .attachment {
   padding: 0 !important;
   max-width: 100% !important;

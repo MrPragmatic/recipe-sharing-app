@@ -1,4 +1,6 @@
 # .rubocop.yml
+
+# Specify the RuboCop extensions to include for Rails and Capybara
 require:
-  - rubocop-rails
-  - rubocop-capybara
+  - rubocop-rails      # Include RuboCop Rails extension
+  - rubocop-capybara   # Include RuboCop Capybara extension

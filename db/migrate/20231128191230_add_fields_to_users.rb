@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Migration to add additional fields to the users table.
+# Migration to add additional fields to the users table (name and bio)
 class AddFieldsToUsers < ActiveRecord::Migration[7.1]
   def change
     change_table :users, bulk: true do

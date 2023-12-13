@@ -10,12 +10,21 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ * Require all files in the current directory and its subdirectories
  *= require_tree .
+ * Require the current file itself
  *= require_self
+ * Require the 'social-share-button' CSS file from a vendor asset
  *= require social-share-button
  */
+
+/* Import Tailwind CSS base styles */
 @import "tailwindcss/base";
+/* Import Tailwind CSS components styles */
 @import "tailwindcss/components";
+/* Import Tailwind CSS utilities styles */
+
+/* Adjust the styles, size (width and height) for the '.ssb-icon' within the '.social-share-button' */
 @import "tailwindcss/utilities";
  .social-share-button .ssb-icon {
      background-size: 24px 24px !important;

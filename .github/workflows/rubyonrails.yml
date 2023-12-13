@@ -1,23 +1,34 @@
-# This workflow uses actions that are not certified by GitHub.  They are
+# This workflow uses actions that are not certified by GitHub. They are
 # provided by a third-party and are governed by separate terms of service,
 # privacy policy, and support documentation.
-#
-# This workflow will install a prebuilt Ruby version, install dependencies, and
-# run tests and linters.
+
+# Define the workflow named "Ruby on Rails CI"
 name: "Ruby on Rails CI"
+
+# Trigger the workflow on push events to the "main" branch
+# and pull requests targeting the "main" branch
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
+# Define the jobs to be executed in the workflow
 jobs:
+  # Define a job named "deploy"
   deploy:
     name: Deploy
+
+    # Specify the operating system for the job
     runs-on: ubuntu-latest
 
+    # Specify the steps to be executed in the job
     steps:
+      # Deploy to production using a third-party (Render.com) action
+      # Reference: https://github.com/marketplace/actions/render-deploy-action
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
+          # Pass the service ID and API key as secrets
           service-id: ${{ secrets.SERVICE_ID }}
           api-key: ${{ secrets.RENDER_API_KEY }}

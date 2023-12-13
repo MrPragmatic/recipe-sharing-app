@@ -1,19 +1,26 @@
-databases:
-  - name: postgres
-    ipAllowList: []
-    databaseName: ENV['POSTGRES_DB']
-    user: POSTGRES_USER
+# render.yaml
 
+# Configuration for databases
+databases:
+  # Postgres database configuration
+  - name: postgres
+    ipAllowList: []  # Empty IP allow list
+    databaseName: ENV['POSTGRES_DB']  # Use environment variable for database name
+    user: POSTGRES_USER  # Use environment variable for database user
+
+# Configuration for services
 services:
+  # Web service configuration
   - type: web
-    name: SERVICES_KEY
-    env: ruby
-    buildCommand: "./render-build.sh"
-    startCommand: "bundle exec rails s"
+    name: SERVICES_KEY  # Service name as per environment variable
+    env: ruby  # Ruby environment
+    buildCommand: "./render-build.sh"  # Build command using the specified script
+    startCommand: "bundle exec rails s"  # Start command for Rails server
     envVars:
+      # Environment variable configuration
       - key: DATABASE_URL
         fromDatabase:
-          name: postgres
-          property: connectionString
+          name: postgres  # Use the Postgres database for connection details
+          property: connectionString  # Connection string property from the database
       - key: RAILS_MASTER_KEY
-        sync: false
+        sync: false  # Do not sync the Rails master key across services

@@ -1,14 +1,20 @@
 <figure class="attachment attachment--<%= blob.representable? ? "preview" : "file" %> attachment--<%= blob.filename.extension %>">
+  <!-- Determine the attachment class based on whether the blob is representable or not, and its file extension -->
+
   <% if blob.representable? %>
+    <!-- Display an image tag for the blob representation if it is representable -->
     <%= image_tag blob.representation(resize_to_limit: local_assigns[:in_gallery] ? [ 800, 600 ] : [ 1024, 768 ]) %>
   <% end %>
 
   <figcaption class="attachment__caption">
+    <!-- Display the attachment caption if it exists, otherwise show the filename and size -->
     <% if caption = blob.try(:caption) %>
       <%= caption %>
     <% else %>
       <span class="attachment__name"><%= blob.filename %></span>
+      <!-- Display the attachment filename -->
       <span class="attachment__size"><%= number_to_human_size blob.byte_size %></span>
+      <!-- Display the human-readable size of the attachment -->
     <% end %>
   </figcaption>
 </figure>

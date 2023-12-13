@@ -1,7 +1,11 @@
+/* Import the base styles from the Tailwind CSS framework */
 @import "tailwindcss/base";
+/* Import the components styles from the Tailwind CSS framework */
 @import "tailwindcss/components";
+/* Import the utilities styles from the Tailwind CSS framework */
 @import "tailwindcss/utilities";
 
+/* Adjust typography styles for headings and paragraphs (base text) */
 h1 {
     @apply text-4xl font-bold mb-4;
 }
