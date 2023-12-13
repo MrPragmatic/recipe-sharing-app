@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'recipes#index'
   get 'users_profile/:id', to: 'users_profiles#show', as: 'user_profile'
   resource :users_profile, only: %i[show edit update destroy]
+
   resources :recipes do
     resources :ingredients
   end
